@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="org.apache.cordova.upload"
+        version="1.0.0">
+    <name>UploadFile</name>
+    <description>You can use the Upload File plugin to select device's photo and get the photo byte array</description>
+    <author>Jack</author>
+    <license>Apache 2.0 License</license>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <js-module src="www/UploadFile.js" name="UploadFile">
+        <clobbers target="cordova.plugins.uploadFile" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FileUpload">
+                <param name="android-package" value="org.apache.cordova.upload.UploadFile"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/upload/FileUpload.java" target-dir="src/org/apache/cordova/upload" />
+    </platform>
+   <!-- <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DataUtil">
+                <param name="ios-package" value="DataUtil"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/DataUtil.h" />
+        <source-file src="src/ios/DataUtil.m" />
+    </platform> -->
+</plugin>

@@ -14,12 +14,12 @@
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="FileUpload">
+            <feature name="UploadFile">
                 <param name="android-package" value="org.apache.cordova.upload.UploadFile"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/upload/FileUpload.java" target-dir="src/org/apache/cordova/upload" />
+        <source-file src="src/android/upload/UploadFile.java" target-dir="src/org/apache/cordova/upload" />
     </platform>
    <!-- <platform name="ios">
         <config-file target="config.xml" parent="/*">
